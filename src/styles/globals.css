@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.message-panel {
+  border-radius: 10px;
+  border: 2px solid gray;
+  padding: 20px;
+}
+
+.message-panel::-webkit-scrollbar {
+  width: 10px; /* Adjust as needed */
+  height: 10px; /* Adjust as needed */
+}
+
+.message-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.message-panel::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 50px;
+}

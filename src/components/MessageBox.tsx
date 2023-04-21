@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { KeyboardEvent, useState } from "react";
+import { KeyboardEvent, useState, useRef } from "react";
 
 type MessageBoxProps = {
   className?: string;
@@ -8,6 +8,7 @@ type MessageBoxProps = {
 
 export const MessageBox = ({ className, onNewMessage }: MessageBoxProps) => {
   const [message, setMessage] = useState("");
+  const inputRef = useRef<any>(null);
 
   const [isSending, setIsSending] = useState(false);
 
@@ -31,7 +32,14 @@ export const MessageBox = ({ className, onNewMessage }: MessageBoxProps) => {
       setIsSending(false);
       // Clear the previous message that was sent
       setMessage("");
+      setFocusToInput();
     }
+  };
+
+  const setFocusToInput = () => {
+    setTimeout(() => {
+      inputRef.current.focus();
+    }, 100);
   };
 
   return (
@@ -40,6 +48,7 @@ export const MessageBox = ({ className, onNewMessage }: MessageBoxProps) => {
         "w-full rounded-md border-2 border-gray-300 py-5 px-3 disabled:cursor-not-allowed disabled:bg-gray-100",
         className
       )}
+      ref={inputRef}
       type="text"
       placeholder="Type your message here..."
       value={message}

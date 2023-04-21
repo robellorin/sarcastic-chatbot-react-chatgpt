@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const openai = new OpenAIApi(configuration);
 
     const response = await openai.createCompletion({
-      model: "text-davinci-003",
+      model: "text-ada-001",
       prompt: `Marv is a chatbot that reluctantly answers questions with sarcastic responses:
 
         You: How many pounds are in a kilogram?
