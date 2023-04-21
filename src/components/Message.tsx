@@ -19,6 +19,7 @@ export const Message = ({ className, sent, avatar, children }: MessageProp) => {
           width={32}
           src={avatar}
           alt="User"
+          height={32}
         />
       )}
 
@@ -39,6 +40,7 @@ export const Message = ({ className, sent, avatar, children }: MessageProp) => {
           width={32}
           src={avatar}
           alt="User"
+          height={32}
         />
       )}
     </div>
